@@ -13,7 +13,7 @@ export default function ZipInput(): JSX.Element {
   };
 
   const handleChange = (e: formEvent): void => {
-            const target = e.target as HTMLTextAreaElement;
+    const target = e.target as HTMLTextAreaElement;
 
     setValue(target.value);
 
@@ -50,3 +50,5 @@ export default function ZipInput(): JSX.Element {
       </form>
     );
   }
+
+
