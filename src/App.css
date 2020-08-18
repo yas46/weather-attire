@@ -1,0 +1,64 @@
+body {
+  font-family: sans-serif;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(8px + 2vmin);
+  color: white;
+}
+
+.form-group {
+  height: 3em;
+  margin: 1em 0;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.form-group input,
+.form-group label {
+  display: block;
+  cursor: text;
+  font-size: 1.5em;
+  font-weight: 200;
+  position: absolute;
+  transition: all 0.15s ease;
+}
+
+.form-group input { 
+  border: none;
+  border-radius: 4px;
+  background: #EFEFEF;
+  height: 60px;
+  padding: 20px 20px 0;
+  outline: none;
+  text-align: center;
+}
+
+.form-group label {
+  color: #9B9B9B;
+  font-weight: 400;
+  line-height: 60px;
+  padding: 0 20px;
+  text-transform: uppercase;
+}
+
+.form-group input.filled ~ label,
+.form-group input:focus ~ label {
+  font-size: .9em;
+  position: absolute;
+  margin-top: -12px;
+}
+
+.form-group input.filled ~ label {
+  color: #007932;
+}
