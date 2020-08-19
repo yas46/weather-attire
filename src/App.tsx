@@ -3,43 +3,24 @@ import React, { useState } from 'react';
 import './App.css';
 import ZipInput from './location/zip-input';
 import City from './display/city';
+import DayAttire from './display/day-attire';
+import { InitialData } from './interfaces-data/initial-data'
 
 export default function App(): JSX.Element {
 
-  const initialData = {
-    city: {
-        coord: {},
-        country: '',
-        name: '',
-        sunrise: 0,
-        sunset: 0,
-        timezone: 0
-    },
-    cnt: 0,
-    cod: '',
-    lists: [{}], 
-    message: 0
-}
-
   interface IData {
-    city: {
-        coord: Object,
-        country: string,
-        name: string,
-        sunrise: number,
-        sunset: number,
-        timezone: number
-    },
+    city: any,
     cnt: number,
     cod: string,
-    lists: any,
+    list: any,
     message: number
   }
 
-  const [weatherData, setData] = useState(initialData);
+  
+
+  const [weatherData, setData] = useState(InitialData);
   
   const renderWeatherData = (data: IData): void =>  {
-    console.log(data);
     setData(data);
   }
 
@@ -49,7 +30,12 @@ export default function App(): JSX.Element {
         <h1>Weather App</h1>
       </header>
       <ZipInput getData={renderWeatherData} />
-      <City data={weatherData}/>
+      <div className='display'>
+        <City data={weatherData} />
+        {weatherData.list.map((element: any, i: number) => 
+          <DayAttire day={i+1} data={element} key={i}/>
+        )}
+      </div>
     </div>
   );
   
