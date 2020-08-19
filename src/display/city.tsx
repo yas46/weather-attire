@@ -24,7 +24,7 @@ export default function City(props: any): JSX.Element {
     useEffect(() => {
         setCity(props.data.city.name);
         console.log(props.data.city)
-    });
+    }, [props.data.city]);
 
 
     return (
