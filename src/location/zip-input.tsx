@@ -27,7 +27,8 @@ export default function ZipInput(props: IZip): JSX.Element {
   };
     
   const fetchAsync = (val: string) => {
-    fetch(`http://api.openweathermap.org/data/2.5/forecast?zip=${val}&appid=20688421ec4a9da4fea603c3003f78bb`)
+
+    fetch(`http://api.openweathermap.org/data/2.5/forecast/daily?zip=${val}&cnt=5&appid=20688421ec4a9da4fea603c3003f78bb&units=imperial`)
       .then(response => response.json())
       .then(data => {
         console.log('Success:', data);
