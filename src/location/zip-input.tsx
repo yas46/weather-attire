@@ -3,13 +3,17 @@ import React, { useState } from 'react';
 type formElem = React.FormEvent<HTMLFormElement>;
 type formEvent = React.FormEvent<HTMLInputElement>
 
-export default function ZipInput(): JSX.Element {
+interface IZip {
+	getData: any;
+}
+
+export default function ZipInput(props: IZip): JSX.Element {
 
   const [value, setValue] = useState<string>('');
 
   const handleSubmit = (e: formElem): void => {
     e.preventDefault();
-    console.log(fetchAsync(value));
+    fetchAsync(value);
   };
 
   const handleChange = (e: formEvent): void => {
@@ -27,6 +31,7 @@ export default function ZipInput(): JSX.Element {
       .then(response => response.json())
       .then(data => {
         console.log('Success:', data);
+        props.getData(data);
       })
       .catch((error) => {
         console.error('Error:', error);
