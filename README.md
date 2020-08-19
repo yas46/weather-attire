@@ -1,4 +1,5 @@
 # Weather Application
+Suggest types of clothes to pack for each day for a given location.
 
 ### `npm start`
 
@@ -9,6 +10,4 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 Builds the app for production to the `build` folder.<br />
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
